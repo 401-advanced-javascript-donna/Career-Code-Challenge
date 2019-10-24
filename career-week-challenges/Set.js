@@ -15,7 +15,7 @@ class Set {
   }
 
   has(value) {
-    if(this.array.includes(value)) return true;
+    return this.array.includes(value);
   }
 }
 
