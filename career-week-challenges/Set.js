@@ -9,7 +9,7 @@ class Set {
 
   remove(value) {
     if(this.array.includes(value)) {
-      const idx = this.array.idx(value);
+      const idx = this.array.indexOf(value);
       this.array.splice(idx, 1);
     }
   }

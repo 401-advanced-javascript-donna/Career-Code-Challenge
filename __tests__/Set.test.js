@@ -1,17 +1,24 @@
 const { Set } = require('../career-week-challenges/Set');
 
 describe('Set methods', () => {
-
+  const data = new Set([1, 2, 3]);
   it('creates a new set', () => {
-    const data = new Set([1, 2, 3]);
+
     expect(data.array).toEqual([1, 2, 3]);
   });
 
   it('should add to a set', () => {
-    const data = new Set([3, 2]);
-    data.add(1);
-    expect(data.array).toEqual([3, 2, 1]);
+    data.add(4);
+    expect(data.array).toEqual([1, 2, 3, 4]);
   });
 
+  it('prevents duplicate when adding', () => {
+    data.add(1);
+    expect(data.array).toEqual([1, 2, 3, 4]);
+  });
 
+  it('removes a value from a set', () => {
+    data.remove(4);
+    expect(data.array).toEqual([1, 2, 3])
+  });
 });
