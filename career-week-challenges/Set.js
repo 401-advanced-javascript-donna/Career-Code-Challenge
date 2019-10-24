@@ -48,6 +48,14 @@ class Set {
     return newSet;
   }
 
+  static intersection(set1, set2) {
+    let newSet = new Set([]);
+    set1.array.forEach(val => {
+      if(set2.has(val)) newSet.add(val);
+    });
+    return newSet;
+  }
+
 }
 
 module.exports = { 

@@ -30,25 +30,32 @@ describe('Set methods', () => {
     expect(check).toEqual(true);
   });
 
-  it('should return the intersection', () => {
+  it('should return instance of the intersection', () => {
     const set1 = new Set([1, 2, 3]);
     const set2 = new Set([1, 2, 4]);
     const intersection = set1.intersection(set2);
     expect(intersection.array).toEqual([1, 2]);
   });
 
-  it('should return the union', () => {
+  it('should return instance of the union', () => {
     const set1 = new Set([1, 2, 3]);
     const set2 = new Set([1, 2, 4]);
     const union = set1.union(set2);
     expect(union.array).toEqual([1, 2, 3, 4]);
   });
 
-  it('should return the difference', () => {
+  it('should return instance of the difference', () => {
     const set1 = new Set([1, 2, 3]);
     const set2 = new Set([1, 2, 5]);
     const difference = set1.difference(set2);
     expect(difference.array).toEqual([3, 5]);
+  });
+
+  it('should return static of intersection', () => {
+    const set1 = new Set([1, 2, 3]);
+    const set2 = new Set([1, 2, 4]);
+    const result = Set.intersection(set1, set2);
+    expect(result.array).toEqual([1, 2]);
   });
 
 });
