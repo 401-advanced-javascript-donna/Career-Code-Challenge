@@ -30,13 +30,6 @@ describe('Set methods', () => {
     expect(check).toEqual(true);
   });
 
-  // it('returns intersections', () => {
-  //   const set1 = new Set([1, 2, 3]);
-  //   const set2 = new Set([2, 3, 4]);
-  //   const result = set1.intersection(set2);
-  //   expect(result).toEqual([2, 3]);
-  // });
-
   it('intersection instance method returns the intersection', () => {
     const set1 = new Set([1, 2, 3]);
     const set2 = new Set([1, 2, 4]);
