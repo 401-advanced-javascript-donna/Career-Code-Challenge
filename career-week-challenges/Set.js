@@ -37,6 +37,17 @@ class Set {
     return newSet;
   }
 
+  difference(set) {
+    let newSet = new Set([]);
+    this.array.forEach(val => {
+      if(!set.has(val)) newSet.add(val);
+    });
+    set.array.forEach(val => {
+      if(!this.has(val)) newSet.add(val);
+    });
+    return newSet;
+  }
+
 }
 
 module.exports = { 

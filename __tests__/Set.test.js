@@ -44,4 +44,11 @@ describe('Set methods', () => {
     expect(union.array).toEqual([1, 2, 3, 4]);
   });
 
+  it('should return the difference', () => {
+    const set1 = new Set([1, 2, 3]);
+    const set2 = new Set([1, 2, 5]);
+    const difference = set1.difference(set2);
+    expect(difference.array).toEqual([3, 5]);
+  });
+
 });
