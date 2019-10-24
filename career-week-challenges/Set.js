@@ -17,8 +17,17 @@ class Set {
   has(value) {
     return this.array.includes(value);
   }
+
+  intersection(set) {
+    let newSet = new Set([]);
+    this.array.forEach(val => {
+      if(set.array.includes(val)) newSet.add(val);
+    });
+    return newSet;
+  }
+
 }
 
-module.exports = {
-  Set
+module.exports = { 
+  Set 
 };
