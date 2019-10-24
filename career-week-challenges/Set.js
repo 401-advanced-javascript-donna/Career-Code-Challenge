@@ -26,6 +26,17 @@ class Set {
     return newSet;
   }
 
+  union(set) {
+    let newSet = new Set([]);
+    this.array.forEach(val => {
+      if(!newSet.has(val)) newSet.add(val); 
+    });
+    set.array.forEach(val => {
+      if(!newSet.has(val)) newSet.add(val);
+    });
+    return newSet;
+  }
+
 }
 
 module.exports = { 
