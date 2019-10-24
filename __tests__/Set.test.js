@@ -65,4 +65,11 @@ describe('Set methods', () => {
     expect(result.array).toEqual([1, 2, 3, 4]);
   });
 
+  it('should return static difference', () => {
+    const set1 = new Set([1, 2, 3]);
+    const set2 = new Set([1, 2, 4]);
+    const result = Set.difference(set1, set2);
+    expect(result.array).toEqual([3, 4]);
+  });
+
 });

@@ -57,15 +57,27 @@ class Set {
   }
 
   static union(set1, set2) {
-    let newArr = new Set([]);
-    set1.array.forEach(value => {
-      if(!newArr.has(value)) newArr.add(value);
+    let newSet = new Set([]);
+    set1.array.forEach(val => {
+      if(!newSet.has(val)) newSet.add(val);
     });
-    set2.array.forEach(value => {
-      if(!newArr.has(value)) newArr.add(value);
+    set2.array.forEach(val => {
+      if(!newSet.has(val)) newSet.add(val);
     });
-    return newArr;
+    return newSet;
   }
+
+  static difference(set1, set2) {
+    let newSet = new Set([]);
+    set1.array.forEach(val => {
+      if(!set2.has(val)) newSet.add(val);
+    });
+    set2.array.forEach(val => {
+      if(!set1.has(val)) newSet.add(val);
+    });
+    return newSet;
+  }
+
 }
 
 module.exports = { 
