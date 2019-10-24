@@ -58,4 +58,11 @@ describe('Set methods', () => {
     expect(result.array).toEqual([1, 2]);
   });
 
+  it('should return static union', () => {
+    const set1 = new Set([1, 2, 3]);
+    const set2 = new Set([1, 2, 4]);
+    const result = Set.union(set1, set2);
+    expect(result.array).toEqual([1, 2, 3, 4]);
+  });
+
 });

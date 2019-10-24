@@ -56,6 +56,16 @@ class Set {
     return newSet;
   }
 
+  static union(set1, set2) {
+    let newArr = new Set([]);
+    set1.array.forEach(value => {
+      if(!newArr.has(value)) newArr.add(value);
+    });
+    set2.array.forEach(value => {
+      if(!newArr.has(value)) newArr.add(value);
+    });
+    return newArr;
+  }
 }
 
 module.exports = { 
